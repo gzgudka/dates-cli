@@ -1,7 +1,7 @@
 package gzgudka
 
-class Duration(private val startDate: String,
-               private val endDate: String) {
+class Duration(private val startDate: Date,
+               private val endDate: Date) {
 
     fun elapsedDays() = 0
 
