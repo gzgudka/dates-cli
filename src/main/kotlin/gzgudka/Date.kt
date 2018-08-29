@@ -17,9 +17,4 @@ data class Date(private val date: String) {
 
     fun year() = dayMonthYear.third
 
-    private fun Pattern.extract(input: String) = matcher(input).let {
-        if (!it.matches()) throw IllegalArgumentException("$date is not valid")
-        Triple(it.group("day").toInt(), it.group("month").toInt(), it.group("year").toInt())
-    }
-
 }
