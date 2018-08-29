@@ -30,7 +30,7 @@ class DateTest {
     fun `should throw IllegalArgumentException when date is not valid`() {
         // given
         exception.expect(IllegalArgumentException::class.java)
-        exception.expectMessage(endsWith(("is not valid")))
+        exception.expectMessage(endsWith(("is not a valid date (dd/MM/yyy)")))
 
         val input = "03-01-1989"
 
