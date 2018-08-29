@@ -18,7 +18,8 @@ class DurationTest(val startDate: Date, val endDate: Date, val daysElapsed: Int)
                 arrayOf(Date("01/01/2000"), Date("03/01/2000"), 1),
                 arrayOf(Date("02/06/1983"), Date("22/06/1983"), 19),
                 arrayOf(Date("04/07/1984"), Date("25/12/1984"), 173),
-                arrayOf(Date("03/01/1989"), Date("03/08/1983"), 1979)
+                arrayOf(Date("03/01/1989"), Date("03/08/1983"), 1979),
+                arrayOf(Date("01/01/1901"), Date("31/12/2999"), 401400)
         )
 
     }

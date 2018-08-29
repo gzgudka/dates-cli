@@ -1,10 +1,16 @@
 package gzgudka
 
 import org.hamcrest.CoreMatchers.`is`
+import org.hamcrest.CoreMatchers.endsWith
 import org.junit.Assert.assertThat
+import org.junit.Rule
 import org.junit.Test
+import org.junit.rules.ExpectedException
 
 class DateTest {
+
+    @get:Rule
+    val exception = ExpectedException.none()!!
 
     @Test
     fun `should extract day, month and year from the valid date`() {
@@ -20,9 +26,12 @@ class DateTest {
         assertThat(date.year(), `is`(1989))
     }
 
-    @Test(expected = IllegalArgumentException::class)
+    @Test
     fun `should throw IllegalArgumentException when date is not valid`() {
         // given
+        exception.expect(IllegalArgumentException::class.java)
+        exception.expectMessage(endsWith(("is not valid")))
+
         val input = "03-01-1989"
 
         // when
